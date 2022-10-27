@@ -1,0 +1,473 @@
+:root {
+    --black-cat: rgb(21, 19, 19);
+    --pink: rgb(211, 157, 157);
+    --green: rgb(19, 160, 19);
+    --white: #fff;   
+    --dark-brown: #cdbbbb;
+    --light-brown: #e4dfcd;
+    --dark-red: #e13821;
+    --light-green: #26b193;
+    --cloud: #82d1da;
+    --shadow: 0 19px 38px rgba(0,0,0,0.30),
+              0 15px 12px rgba(0,0,0,0.22);
+}
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    counter-reset: score;
+}
+.phone{
+    position: relative;
+    width: 300px;
+    height: 600px;
+    border: 8px solid black;
+    border-radius: 40px;
+    background-color: #fcde92;
+    background-image: linear-gradient(0deg, #fcde92 0%, #6ff0ff 100%);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    overflow: hidden; 
+} 
+.title {
+    position: relative;
+    text-align: center;
+    font-size: 55px;
+    margin: 24px 24px 0px 24px;
+}
+.score {
+    position: relative;
+    text-align: center;
+    margin: 8px;
+}
+input[type=checkbox] {
+    position: absolute;
+    appearance: none;
+    cursor: pointer;
+    z-index: 2;
+    width: 100%;
+    height: 80px;
+}
+input[type=checkbox]:focus {
+    appearance: none;
+    outline: none;
+}
+input:checked {
+    counter-increment: score;
+}
+.score::after {
+    content: counter(score);
+}
+@keyframes cat {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: -40px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+@keyframes layer {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: -40px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+.layer-1 {
+    position: absolute;
+    z-index: 1;
+    height: 450px;
+    width: 80px;
+    bottom: 0;
+    right: 60px;
+
+    animation-name: layer;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.layer-2 {
+    position: absolute;
+    z-index: 2;
+    height: 450px;
+    width: 80px;
+    bottom: 0;
+    left: 60px;
+
+    animation-name: layer;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}   
+.layer-3 {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 220px;
+    height: 400px;
+    bottom: 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.layer-4 {
+    position: absolute;
+    z-index: 4;
+    height: 340px;
+    width: 80px;
+    bottom: 0;
+    left: 50px;
+
+    animation-name: layer;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.layer-5 {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    width: 170px;
+    height: 290px;
+    bottom: 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.layer-6 {
+    position: absolute;
+    z-index: 6;
+    height: 240px;
+    width: 80px;
+    bottom: 0;
+    right: 50px;
+
+    animation-name: layer;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.layer-7 {
+    position: absolute;
+    z-index: 7;
+    right: 0;
+    width: 220px;
+    height: 190px;
+    bottom: 0;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+}
+.layer-8 {
+    bottom: 0;
+    height: 120px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    width: 200px;
+    z-index: 8;
+}
+.layer-8__left-lawn {
+    background: var(--cloud);
+    border-radius: 40px 40px 0 0;
+    bottom: 0;
+    display: inline-block;
+    height: 70%;
+    left: 0;
+    position: absolute;
+    width: 80px;
+}
+.layer-8__center-lawn {
+    background: var(--cloud);
+    border-radius: 40px 40px 0 0;
+    bottom: 0;
+    display: inline-block;
+    height: 98%;
+    left: 60px;
+    position: absolute;
+    width: 80px;
+}
+.layer-8__right-lawn {
+    background: var(--cloud);
+    border-radius: 40px 40px 0 0;
+    bottom: 0;
+    display: inline-block;
+    height: 80%;
+    left: 130px;
+    position: absolute;
+    width: 80px;
+}
+.layer-9 {
+    bottom: 0;
+    height: 100px;
+    position: absolute;
+    width: 120px;
+    z-index: 9;
+}
+.layer-9 {
+    bottom: 0;
+    height: 100px;
+    position: absolute;
+    width: 120px;
+    z-index: 9;
+}
+
+.layer-9__left-cloud {
+    background: white;
+    border-radius: 40px 40px 0 0;
+    display: inline-block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 80px;
+}  
+
+.layer-9__right-cloud {
+    background: white;
+    border-radius: 0 40px 30px 0;
+    bottom: 0;
+    display: inline-block;
+    height: 60%;
+    left: 80px;
+    position: absolute;
+    width: 40px;
+}
+.layer-10 {
+    bottom: 0;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    width: 120px;
+    z-index: 10;
+
+/*     animation-name: ;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite; */
+}
+/* @keyframes layer--4 {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: -50px;
+    }
+    100% {
+        bottom: 0;
+    }
+} */
+.layer-10__left-cloud {
+    background: white;
+    border-radius: 40px 0 0 30px;
+    bottom: 0;
+    display: inline-block;
+    height: 60%;
+    right: 80px;
+    position: absolute;
+    width: 40px;
+}
+
+.layer-10__right-cloud {
+    background: white;
+    border-radius: 40px 40px 0 0;
+    display: inline-block;
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    width: 80px;
+}
+
+/* ____________  CAT FEATURES ________________*/
+
+.left-ear--outer {
+    position: absolute;
+    background-color: var(--black-cat);
+    border-radius: 50%;
+    width: 20px;
+    height: 50px;
+    left: 10px;
+}
+.left-ear--inner {
+    position: absolute;
+    background-color: var(--pink);
+    border-radius: 50%;
+    width: 10px;
+    height: 50px;
+    left: 15px;
+    top: 8px;
+}
+.right-ear--outer {
+    position: absolute;
+    background-color: var(--black-cat);
+    border-radius: 50%;
+    width: 20px;
+    height: 50px;
+    right: 10px;
+}
+.right-ear--inner {
+    position: absolute;
+    background-color: var(--pink);
+    border-radius: 50%;
+    width: 10px;
+    height: 50px;
+    right: 15px;
+    top: 8px;
+}
+.head {
+    position: absolute;
+    background-color: var(--black-cat);
+    border-radius: 35px;
+    width: 70px;
+    height: 45px;
+    left: 5px;
+    top: 13px;
+}
+.head__eye {
+    position: absolute;
+    top: 15px;
+    background-color: var(--green);
+    border-radius: 50%;
+    width: 18px;
+    height: 12px;   
+
+    /* Animacition eyes */
+
+    animation-name: blink;   
+    animation-duration: 2s;
+    animation-iteration-count: infinite;     
+}
+
+@keyframes blink {
+    0% {
+        height: 12px;
+    }
+    5% {
+        transform: translate(0px, 6px);
+        height: 1px;
+    }
+    10% {
+        transform: translate(0px, 0px);
+        height: 12px;
+    }
+}
+.head__eye--left {
+    left: 10px;
+  
+}
+.head__eye--right {
+    right: 10px;          
+}
+.eye__pupil {
+    position: absolute;
+    top: 15px;
+    background-color: var(--black-cat);
+    border-radius: 60%;
+    width: 8px;
+    height: 12px;   
+}
+.eye__pupil--left {
+    left: 15px;
+}
+.eye__pupil--right {
+    right: 15px;
+}
+.eye__pupil--white {
+    position: absolute;
+    background-color: var(--white);
+    border-radius: 5px;
+    width: 5px;
+    height: 5px;
+}
+.eye_pupil-white--left {
+    top: 16px;
+    left: 20px;
+}
+.eye_pupil-white--right {
+    top: 16px;
+    right: 13px;
+}
+.noise{
+    position: absolute;
+    background-color: var(--pink);
+    border-radius: 2px 2px 5px 5px;
+    width: 7px;
+    height: 5px; 
+    left: 31px;
+    top: 25px;             
+}
+/*______________________________________________ */     
+
+/* ______________   MUSHROOMS  _________________ */
+
+.lawn {
+    background: var(--dark-red);
+    height: 20px;
+    width: 100%;
+}
+.land {
+    background: linear-gradient(135deg, var(--dark-red) 25%, transparent 25%) -50px 0,
+            linear-gradient(-135deg, var(--dark-red) 25%, transparent 25%) -50px 0,
+            linear-gradient(45deg, var(--light-brown) 25%, transparent 25%),
+            linear-gradient(-45deg, transparent 25%, var(--dark-brown) 25%);
+    background-size: 33px 30px;
+    height: 30px;
+    width: 100%;
+}
+.mushroom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 70px;
+    background-color: var(--light-brown);
+    box-shadow: -3px 3px 8px 4px rgba(0,0,0,0.34);
+}
+.mushroom-1 {
+    width: 220px;
+    border-radius: 20px;
+}
+.mushroom-2 {
+    width: 170px;
+    border-radius: 20px;
+}
+.mushroom-3 {
+    width: 220px;
+    border-radius: 20px 0px 0px 20px;
+}
+.stem {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100px;
+    height: 400px;
+    background: var(--light-brown);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+.stem-3 {
+    position: absolute;
+    right: 40px;
+    margin: 0 auto;
+    width: 100px;
+    height: 400px;
+    background: var(--light-brown);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+/*_________________________________________________________________  */
+
+
